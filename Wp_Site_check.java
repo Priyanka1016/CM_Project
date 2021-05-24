@@ -109,36 +109,37 @@ System.out.println("");
 LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
 for (LogEntry entry : logEntries) {
 	System.out.println(entry);
+}
 		//To encounter 403 error
-	((JavascriptExecutor)driver).executeScript("window.open()");
-	ArrayList<String> tabs4 = new ArrayList<String>(driver.getWindowHandles());
-	driver.switchTo().window(tabs4.get(5));
-	driver.get(baseUrl);
-	String url3 = driver.getCurrentUrl();
-	String newurl3 = url3+"wp-content/uploads/";
-	driver.get(newurl3);
-	String status = driver.findElement(By.xpath("/html/body/h1")).getText();
-	System.out.println("wp-content/uploads Status: "+status);
+((JavascriptExecutor)driver).executeScript("window.open()");
+ArrayList<String> tabs4 = new ArrayList<String>(driver.getWindowHandles());
+driver.switchTo().window(tabs4.get(5));
+driver.get(baseUrl);
+String url3 = driver.getCurrentUrl();
+String newurl3 = url3+"wp-content/uploads/";
+driver.get(newurl3);
+String status = driver.findElement(By.xpath("/html/body/h1")).getText();
+System.out.println("wp-content/uploads Status: "+status);
 
-	((JavascriptExecutor)driver).executeScript("window.open()");
-	ArrayList<String> tabs5 = new ArrayList<String>(driver.getWindowHandles());
-	driver.switchTo().window(tabs5.get(6));
-	driver.get(baseUrl);
-	String url4 = driver.getCurrentUrl();
-	String newurl4 = url4+"/wp-includes/";
-	driver.get(newurl4);
-	String status1 = driver.findElement(By.xpath("/html/body/h1")).getText();
-	System.out.println("wp-includes Status: "+status1);
+((JavascriptExecutor)driver).executeScript("window.open()");
+ArrayList<String> tabs5 = new ArrayList<String>(driver.getWindowHandles());
+driver.switchTo().window(tabs5.get(6));
+driver.get(baseUrl);
+String url4 = driver.getCurrentUrl();
+String newurl4 = url4+"/wp-includes/";
+driver.get(newurl4);
+String status1 = driver.findElement(By.xpath("/html/body/h1")).getText();
+System.out.println("wp-includes Status: "+status1);
 
-	((JavascriptExecutor)driver).executeScript("window.open()");
-	ArrayList<String> tabs6 = new ArrayList<String>(driver.getWindowHandles());
-	driver.switchTo().window(tabs6.get(7));
-	driver.get(baseUrl);
-	String url5 = driver.getCurrentUrl();
-	String newurl5 = url5+"/xmlrpc.php";
-	driver.get(newurl5);
-	String status2 = driver.findElement(By.xpath("/html/body/h1")).getText();
-	System.out.println("/xmlrpc.php Status: "+status2);
+((JavascriptExecutor)driver).executeScript("window.open()");
+ArrayList<String> tabs6 = new ArrayList<String>(driver.getWindowHandles());
+driver.switchTo().window(tabs6.get(7));
+driver.get(baseUrl);
+String url5 = driver.getCurrentUrl();
+String newurl5 = url5+"/xmlrpc.php";
+driver.get(newurl5);
+String status2 = driver.findElement(By.xpath("/html/body/h1")).getText();
+System.out.println("/xmlrpc.php Status: "+status2);
 
 
 
