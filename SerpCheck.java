@@ -1,5 +1,6 @@
 driver.get("Paste yout file path here");	
-String stored = driver.getPageSource();		
+String stored = driver.getPageSource();	
+//To check following tags	
 String[] incode = { "tag:ccpa_cmp_code", "transitional.dtd", "tag:mnet_policy_link",
 "tag:ad_annotation_enabled", "tag:rank_annotation_enabled", "<tag:post_form_html>", "tag:display_query",
 "<tag:reset_css>", "tag:jssource", "about:blank" };
@@ -17,7 +18,7 @@ for (String check : incode) {
 System.out.println("");	
 System.out.println("COUNT of Tags");	
 System.out.println("------------------------");	
-
+//Compare count of tags
 int count = 0;
 
 for (String word : stored.split(" "))
@@ -115,6 +116,7 @@ else {
 }
 System.out.println("");
 boolean FontCount = false;
+//To check no of font used
 int totalFontused=0;
 for (String word : stored.split("font-family: <tagd:style name=\"Keywords\""))
 {        
